@@ -1,0 +1,12 @@
+@use "../../../styles/variables" as *;
+.gradientHeaderText {
+  color: $color-gray-100;
+  width: fit-content;
+  font-size: 14px;
+  font-style: bold;
+  letter-spacing: 0.04px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00f4e2 0%, #00ff7f 100%);
+  padding: 1px 8px;
+  border-radius: 4px;
+}

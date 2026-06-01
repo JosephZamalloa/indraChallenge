@@ -1,0 +1,69 @@
+@use "../../../styles/_variables.scss" as *;
+@use "../../../styles/_mixins.scss" as *;
+
+.stepBar {
+  display: flex;
+  align-items: center;
+  background-color: #edeffc;
+  padding: 16px;
+  justify-content: center;
+  width: 100%;
+
+  &__desktop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include mobile-tablet {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 480px;
+      padding: 0 24px;
+      box-sizing: border-box;
+      justify-content: center;
+    }
+  }
+
+  &__backBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  &__backIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__stepLabel {
+    font-size: 10px;
+    font-weight: 700;
+    color: $color-neutral-700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &__progress {
+    flex: 1;
+    min-width: 0;
+    height: 6px;
+  }
+}

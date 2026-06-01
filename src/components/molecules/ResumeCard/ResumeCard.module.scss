@@ -1,0 +1,83 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/_mixins.scss" as *;
+
+.resumeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mobile {
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__resumeWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__resumeLabel {
+    font-size: 12px;
+    font-weight: 900;
+    color: $color-neutral-600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  &__resume {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-gray-100;
+    margin: 0;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &__divider {
+    border: 1px solid #d7dbf5;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h4 {
+      color: $color-neutral-700;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-neutral-700;
+    }
+  }
+}

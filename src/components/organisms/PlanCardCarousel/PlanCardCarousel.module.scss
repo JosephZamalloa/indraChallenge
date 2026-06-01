@@ -1,0 +1,26 @@
+@use "../../../styles/_mixins.scss" as *;
+
+.planCardCarousel {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  width: 100%;
+
+  @include mobile {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 calc((100% - 288px) / 2) 16px;
+    box-sizing: border-box;
+    gap: 16px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+  }
+}

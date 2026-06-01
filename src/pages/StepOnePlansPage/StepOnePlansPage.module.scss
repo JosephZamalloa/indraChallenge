@@ -1,0 +1,60 @@
+@use "../../styles/variables" as *;
+@use "../../styles/_mixins.scss" as *;
+
+.stepOnePlansPage {
+  width: 100%;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: $max-width;
+  gap: 56px;
+
+  @include mobile {
+    padding: 24px 0;
+    gap: 32px;
+  }
+
+  &__backButton {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    max-width: $max-width;
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  h1 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    line-height: 1.2;
+
+    @include mobile {
+      font-size: 1.5rem;
+      padding: 0 24px;
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.stepOnePageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}

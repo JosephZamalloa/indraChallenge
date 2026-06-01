@@ -1,0 +1,16 @@
+@use "../../../styles/_mixins.scss" as *;
+
+.infoCardSelect {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+}

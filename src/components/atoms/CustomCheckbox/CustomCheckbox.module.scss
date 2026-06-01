@@ -1,0 +1,29 @@
+@use "../../../styles/_variables.scss" as *;
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &__input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    padding: 2px;
+    border: 2px solid $color-gray-100;
+    &:checked {
+      background: $color-gray-100;
+      border-color: $color-gray-100;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 16px;
+    }
+  }
+  &__label {
+    font-size: 12px;
+    color: $color-gray-100;
+    font-style: regular;
+    font-weight: 400;
+  }
+}

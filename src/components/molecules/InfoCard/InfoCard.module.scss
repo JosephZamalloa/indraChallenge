@@ -1,0 +1,73 @@
+@use "../../../styles/_variables.scss" as *;
+@use "../../../styles/_mixins.scss" as *;
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  border-radius: 24px;
+  width: fit-content;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+  position: relative;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &--active {
+    border: 2px solid #000000;
+  }
+
+  &__checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #a9afd9;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:checked {
+      background-color: #389e0d;
+      border-color: #389e0d;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+    }
+  }
+
+  &__content {
+    margin: 0px;
+    padding: 0px;
+    width: 208px;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 900;
+      color: $color-gray-100;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      color: $color-gray-100;
+    }
+  }
+}

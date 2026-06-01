@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+@use "../../styles/_mixins.scss" as *;
+
+.stepTwoPageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepTwoResumePage {
+  width: 100%;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: 24px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 928px;
+  }
+
+  &__backButton {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 32px;
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 48px 0;
+
+    @include mobile {
+      font-size: 1.5rem;
+      margin-bottom: 32px;
+    }
+  }
+}

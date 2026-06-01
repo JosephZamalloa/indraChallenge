@@ -1,0 +1,68 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  @include mobile {
+    gap: 8px;
+  }
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid transparent;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  &__lineWrapper {
+    display: flex;
+    align-items: center;
+
+    img:last-child {
+      margin-left: -22px;
+    }
+  }
+  &--active {
+    .step__circle {
+      background-color: $color-blueBerry-100;
+      color: #ffffff;
+      border-color: $color-blueBerry-100;
+    }
+    .step__label {
+      color: $color-gray-100;
+    }
+  }
+
+  &--inactive {
+    .step__circle {
+      background-color: transparent;
+      color: $color-gray-50;
+      border-color: $color-gray-50;
+    }
+    .step__label {
+      color: $color-gray-50;
+    }
+  }
+
+  &--completed {
+    .step__circle {
+      background-color: $color-gray-100;
+      color: #ffffff;
+      border-color: $color-gray-100;
+    }
+    .step__label {
+      color: $color-gray-100;
+    }
+  }
+}

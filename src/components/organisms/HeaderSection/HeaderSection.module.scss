@@ -1,0 +1,55 @@
+@use "../../../styles/_variables.scss" as *;
+@use "../../../styles/_mixins.scss" as *;
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__headerSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    max-width: $max-width;
+    padding: 0 24px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-gray-100;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__contactPhone {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-gray-100;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}
