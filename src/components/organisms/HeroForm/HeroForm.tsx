@@ -79,6 +79,7 @@ const HeroForm = () => {
             value={documentNumberField.value}
             onChangeSelect={(e) => documentTypeField.onChange(e.target.value)}
             onChangeInput={(e) => documentNumberField.onChange(e.target.value)}
+            key={0}
           />
           {errors.documentType && (
             <span className={s.heroForm__error}>

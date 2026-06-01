@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { StepBar, ResumeCard } from "../../components/molecules";
 import { BackButton } from "../../components/atoms";
@@ -10,6 +11,10 @@ export default function StepTwoResumePage() {
   const navigate = useNavigate();
   const { user, selectedPlan } = useAppStore();
   const { formData } = useFormStore();
+
+  useEffect(() => {
+    if (!selectedPlan) navigate("/");
+  }, [selectedPlan, navigate]);
 
   return (
     <div className={s.stepTwoPageWrapper}>

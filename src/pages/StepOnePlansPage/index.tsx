@@ -8,6 +8,7 @@ import s from "./StepOnePlansPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import imageRoutes from "../../utils/imageRoutes";
 import { useAppStore } from "../../store/useAppStore";
+import { useFormStore } from "../../store/formStores";
 import { calcAge } from "../../utils/calcAge";
 
 export default function StepOnePlansPage() {
@@ -17,6 +18,14 @@ export default function StepOnePlansPage() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const navigate = useNavigate();
   const { setUser, setSelectedPlan } = useAppStore();
+  const { formData } = useFormStore();
+
+  useEffect(() => {
+    if (!formData.documentNumber) {
+      navigate("/");
+      return;
+    }
+  }, [formData.documentNumber, navigate]);
 
   useEffect(() => {
     const fetchData = async () => {

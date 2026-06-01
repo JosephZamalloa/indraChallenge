@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HeaderSection from "./components/organisms/HeaderSection/HeaderSection";
 
@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<RegisterPage />} />
           <Route path="/plans" element={<StepOnePlansPage />} />
           <Route path="/resume" element={<StepTwoResumePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </>
